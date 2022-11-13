@@ -1,0 +1,243 @@
+:root {
+  --blur-size: 30px;
+  --shape-1-size: 320px;
+  --shape-3-size: 280px;
+  --shapes-opacity: 50%;
+}
+.hero{
+    margin-top: 6%;
+    z-index: -1;
+}
+.hero-bottom-head{
+    display: flex;
+    margin-left: 10%;
+}
+.hero-bottom-head h1{
+    font-weight: 900;
+    font-size: 12vw;
+}
+.hero-bottom-head img{
+  width: 16%;
+  height: auto;
+  margin-left: 6%;
+    
+}
+.hero__title{
+    font-size: 12.5vw;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: antiquewhite;
+    
+}
+
+.hero-top-head{
+    display: flex;
+    width: 62%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 12%;
+}
+.hero-top-head img{
+  width: 67%;
+}
+.hero-top-head h4{
+    font-size:2.5rem;
+    font-weight: 100;
+}
+.hero-content{
+width: 65%;
+margin-left: 11%;
+display: flex;
+
+}
+.hero-content p{
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+.btn{
+  width: 43rem;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+.stl{
+  border-color: #0075FF;
+  color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #0075FF 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #0075FF 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.stl:hover{
+  background-position: 0;
+}
+.strip{
+    width: 100%;  
+    height: 3.625rem;
+    background-color: #DBFF00;
+    margin-top: 5.5%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.date{
+    margin-left: 5%;
+}
+.chine{
+  position: absolute;
+  right: 11%;
+  width: 3%;
+  bottom: -72%;
+}
+
+.container{
+  width: 480px;
+  height: 480px;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  z-index: -2;
+}
+.shape1 {
+  width: var(--shape-1-size);
+  height: var(--shape-1-size);
+  background-color: purple;
+  border-radius: 50%;
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  mix-blend-mode: multiply;
+  filter: blur(var(--blur-size));
+  opacity: var(--shapes-opacity);
+  animation: blob ease-in 7s infinite;
+}
+
+.shape2 {
+  width: var(--shape-1-size);
+  height: var(--shape-1-size);
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  mix-blend-mode: multiply;
+  filter: blur(var(--blur-size));
+  opacity: var(--shapes-opacity);
+  animation: blob ease-in 7s infinite;
+  animation-delay: 2s;
+  animation-direction: reverse;
+}
+
+.shape3 {
+  width: var(--shape-3-size);
+  height: var(--shape-3-size);
+  background-color: salmon;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - calc(var(--shape-1-size) / 2));
+  bottom: 0;
+  mix-blend-mode: multiply;
+  filter: blur(var(--blur-size));
+  opacity: var(--shapes-opacity);
+  animation: blob ease-in 7s infinite;
+  animation-delay: 4s;
+}
+
+@keyframes blob {
+  0% {
+      transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+      transform: translate(500px, -100px) scale(1.1);
+  }
+  66% {
+      transform: translate(-300px, -100px) scale(0.9);
+  }
+  100% {
+      transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero{
+    margin-top: 0%;
+    z-index: -1;
+  }
+  .hero-bottom-head {
+    flex-direction: column;
+    margin-left: 4%;
+}
+.hero-bottom-head h1{
+  font-size: 4.2rem;
+}
+.hero-bottom-head img{
+  width: 75%;
+}
+.hero-top-head{
+  margin-left: 5%;
+  align-items: flex-end;
+  margin-top: 20%;
+}
+.hero-top-head h4{
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+.hero-top-head img{
+  width: 88%;
+}
+.container{
+  width: auto;
+  height: auto;
+  top: 50%;
+}
+.hero-content{
+  flex-direction: column-reverse;
+  width: 80%;
+  margin-top: 4rem;
+}
+.hero-content p{
+  font-size: 1rem;
+}
+.btn{
+  width: 12rem;
+  margin-left: -7rem;
+  font-size: 0.7rem;
+}
+.chine{
+  bottom: 11rem;
+  width: 16%;
+
+}
+.strip{
+  
+}
+}
